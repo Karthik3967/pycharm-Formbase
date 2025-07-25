@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form base</title>
+</head>
+<body>
+{% if edit%}
+<div>Submit your Visit</div>
+{% else %}
+<div>Submit your Visit</div>
+{% endif %}
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">
+        {% if edit %}
+        <div>Update</div>
+        {% else %}
+        <div>Submit</div>
+        {% endif %}
+    </button>
+</form>
+</body>
+</html>

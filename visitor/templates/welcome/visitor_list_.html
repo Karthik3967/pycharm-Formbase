@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+     {% for visitor in visitors %}
+    <li>
+        <div>
+            <span>{{visitor.name}}</span>-
+        <span>{{visitor.message}}</span>
+    </div>
+        <div>
+            <span>{{visitor.created_at}}</span>
+        </div>
+        <div><a href="{% url 'edit' visitor.id%}">edit</a> </div>
+         <div><a href="{% url 'delete' visitor.id %}">Delete</a></div>
+    </li>
+{% empty %}
+    <li>No visitors</li>
+{% endfor %}
+</body>
+</html>

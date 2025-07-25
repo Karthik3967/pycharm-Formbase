@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+     {% for Employee in Employees %}
+    <li>
+        <div>
+            <span>{{Employee.name}}</span>-
+        <span>{{Employee.message}}</span>
+    </div>
+        <div>
+            <span>{{Employee.created_at}}</span>
+        </div>
+        <div><a href="{% url 'upload' Employee.id%}">upload</a> </div>
+         <div><a href="{% url 'delete' Employee.id %}">Delete</a></div>
+    </li>
+{% empty %}
+    <li>No Employees</li>
+{% endfor %}
+</body>
+</html>
